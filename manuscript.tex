@@ -1,0 +1,167 @@
+\documentclass[a4paper]{article}
+
+\usepackage{comment}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{epsfig}
+\usepackage[linesnumbered]{algorithm2e}
+
+\newcommand{\QMark}{{\color{red} \large ???}}
+
+\geometry{left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm}
+
+% https://en.wikibooks.org/wiki/LaTeX/Fonts
+\renewcommand{\rmdefault}{ppl}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\title{My Template}
+\author{Jiannan Yang}
+
+\begin{document}
+\maketitle
+
+\begin{comment}
+\begin{abstract}
+This is abstract.
+\\
+\textbf{Keyword:} abc, def
+\end{abstract}
+\end{comment}
+
+\section{Theorem and Formula}
+This is citation \cite{fan2013making,dwork2012privacy,gray2013consensus,cormen2009introduction}.
+This is footnote \footnote{\url{http://www.songhuadan88.com}}.
+
+\begin{definition}
+This is definition.
+\end{definition}
+
+\begin{theorem}
+\label{theorem}
+This is theorem.
+\end{theorem}
+
+\begin{proof}
+This is proof.
+\begin{equation}
+\label{equation}
+1+1=2\mid{}2+2=4.
+\log {\rm polylog}\ \text{abc}
+\end{equation}
+\end{proof}
+
+\section{Equation}
+All equations share the same label.
+\begin{equation}
+\begin{split}
+1+1&+1 \\
+2&+2+2 \\
+3+3&+3 \\
+4&+4+4
+\end{split}
+\end{equation}
+\\
+Each equation has its label.
+\begin{align}
+1+1&=1 \\
+2&=2+2 \\
+1&=3+4 \\
+4&=6+7
+\end{align}
+
+\section{Reference}
+Equation~\eqref{equation}
+Theorem~\ref{theorem}
+Section~1
+Figure~1.1
+
+\section{Itemize}
+A list with predefined item title.
+\begin{enumerate}[$(1)$]
+\item First Item
+\item Second Item
+\item Third Item
+\end{enumerate}
+
+\section{Table}
+The second column is fixed to 5cm.
+\begin{table}[!ht]
+\renewcommand\arraystretch{1.4} % set row spacing, only work for this table
+\begin{center}
+\caption{Oh, my table}
+\label{table}
+\begin{tabular}{|c|p{5cm}|}
+\hline
+cell11 & cell12 \\
+\hline
+cell21 & cell22 \\
+\hline
+cell31 & cell32 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Figure}
+Use trim to adjust figure and width to resize.
+\begin{figure}[!ht]
+  \centering
+  \fbox{\includegraphics[trim=0cm 0cm 0cm 0cm,width=5cm]{icon.png}}
+%   width=\textwidth
+  \caption{caption}\label{fig:something}
+\end{figure}
+
+\section{Algorithm}
+See Alg.~\ref{alg:something}, Line~\ref{code:step}.
+
+ \begin{algorithm}[!ht] % use [H] if in beamer
+  \KwData{The first parameter; the second parameter; the third parameter;}
+  \KwResult{The output}
+  The first statement\;
+  \label{code:step}
+  $//$ Make some comment\;
+  \For{something to traverse}
+  {something in For\;}  
+  \ForAll{something to traverse} % also ForEach
+  {something in ForAll\;}
+  \While{something to traverse}
+  {something in While\;}
+  \Repeat{condition to finish}
+  {something in Repeat\;}
+  \eIf{condition in If}
+  {something in If\;}
+  {something in Else\;}
+  \eIf{$S$ and $S_l$ are in the same set of the partition}
+  {Add $same$ by $1$\;}
+  {Add $notsame$ by $1$\;}
+  \Return{Something to return;}
+  \caption{An Algorithm}
+  \label{alg:something}
+ \end{algorithm}
+
+\section{Settings}
+To eliminate output file on WinEdt:
+Opinions, Execution Modes, Tex Options, Uncheck ``Use \%P if...''
+
+\noindent However, I start to use overleaf. 
+
+\bibliographystyle{alpha} % abbrv,  alpha, unsrt
+\bibliography{manuscript}
+%\bibliography{C:/Users/username/Desktop/lab/bibfile}
+
+\end{document}
